@@ -2,12 +2,12 @@ import Link from 'next/link.js';
 import EventList from '../components/events/EventList.js';
 import { getFeaturedEvents } from '../dummy-data.js';
 
-function HomePage() {
-  const featuredEvents = getFeaturedEvents();
+function HomePage({ events }) {
+  // const featuredEvents = getFeaturedEvents();
   return (
     <div>
       <h1>Welcome to HomePage</h1>
-      <EventList events={featuredEvents} />
+      <EventList events={events} />
       <ul>
         <li>
           <Link href={{ pathname: '/events' }}>Events</Link>
@@ -16,5 +16,7 @@ function HomePage() {
     </div>
   );
 }
+
+export async function getStaticProps() {}
 
 export default HomePage;
