@@ -1,8 +1,15 @@
-import { AddressIcon, DateIcon } from '../icons';
+import { AddressIcon, DateIcon } from '../icons/index';
 import LogisticsItem from './LogisticsItem';
 import styles from './EventLogistics.module.css';
 
-function EventLogistics({ date, address, image, imageAlt }) {
+interface Props {
+  date: string;
+  address: string;
+  image: string;
+  imageAlt: string;
+}
+
+function EventLogistics({ date, address, image, imageAlt }: Props) {
   const formattedDate = new Date(date).toLocaleDateString('en-US', {
     day: 'numeric',
     month: 'long',

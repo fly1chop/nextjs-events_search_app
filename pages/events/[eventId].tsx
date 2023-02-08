@@ -1,15 +1,15 @@
 import { useRouter } from 'next/router.js';
-import { getEventById } from '../../dummy-data.js';
-import EventSummary from '../../components/event-detail/EventSummary.js';
-import EventLogistics from '../../components/event-detail/EventLogistics.js';
-import EventContent from '../../components/event-detail/EventContent.js';
-import ErrorAlert from '../../components/ui/ErrorAlert.js';
+import { getEventById } from '../../dummy-data';
+import EventSummary from '../../components/event-detail/EventSummary';
+import EventLogistics from '../../components/event-detail/EventLogistics';
+import EventContent from '../../components/event-detail/EventContent';
+import ErrorAlert from '../../components/ui/ErrorAlert';
 
 function EventDetailPage() {
   const router = useRouter();
 
   const { eventId } = router.query;
-  const event = getEventById(eventId);
+  const event = getEventById(eventId as string);
 
   if (!event) {
     return (

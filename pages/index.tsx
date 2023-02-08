@@ -1,6 +1,6 @@
 import Link from 'next/link.js';
-import EventList from '../components/events/EventList.js';
-import { getFeaturedEvents } from '../dummy-data.js';
+import EventList from '../components/events/EventList';
+import { getFeaturedEvents } from '../dummy-data';
 
 function HomePage({ events }) {
   // const featuredEvents = getFeaturedEvents();
@@ -17,6 +17,6 @@ function HomePage({ events }) {
   );
 }
 
-export async function getStaticProps() {}
+// export async function getStaticProps() {}
 
 export default HomePage;

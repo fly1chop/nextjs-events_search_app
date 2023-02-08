@@ -1,16 +1,20 @@
 import { useRef } from 'react';
-import Button from '../ui/Button.js';
+import Button from '../ui/Button';
 import styles from './EventsSearch.module.css';
 
-function EventsSearch({ onSearch }) {
-  const yearInputRef = useRef();
-  const monthInputRef = useRef();
+interface Props {
+  onSearch: (year: string, month: string) => void;
+}
 
-  const submitHandler = (event) => {
+function EventsSearch({ onSearch }: Props) {
+  const yearInputRef = useRef(null);
+  const monthInputRef = useRef(null);
+
+  const submitHandler = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    const selectedYear = yearInputRef.current.value;
-    const selectedMonth = monthInputRef.current.value;
+    const selectedYear: string = yearInputRef.current.value;
+    const selectedMonth: string = monthInputRef.current.value;
 
     onSearch(selectedYear, selectedMonth);
   };

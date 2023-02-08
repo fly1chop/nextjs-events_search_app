@@ -1,7 +1,14 @@
 import Link from 'next/link.js';
+import { ReactNode } from 'react';
 import styles from './Button.module.css';
 
-function Button({ children, link, onClick }) {
+interface Props {
+  children: ReactNode;
+  link?: string;
+  onClick?: () => void;
+}
+
+function Button({ children, link, onClick }: Props) {
   return (
     <>
       {link ? (

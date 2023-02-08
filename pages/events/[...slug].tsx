@@ -1,9 +1,9 @@
 import { useRouter } from 'next/router.js';
-import { getFilteredEvents } from '../../dummy-data.js';
-import EventList from '../../components/events/EventList.js';
-import ResultsTitle from '../../components/events/ResultsTitle.js';
-import Button from '../../components/ui/Button.js';
-import ErrorAlert from '../../components/ui/ErrorAlert.js';
+import { getFilteredEvents } from '../../dummy-data';
+import EventList from '../../components/events/EventList';
+import ResultsTitle from '../../components/events/ResultsTitle';
+import Button from '../../components/ui/Button';
+import ErrorAlert from '../../components/ui/ErrorAlert';
 
 function FilteredEventsPage() {
   const router = useRouter();

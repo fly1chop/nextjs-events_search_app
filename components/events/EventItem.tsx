@@ -1,8 +1,9 @@
-import Button from '../ui/Button.js';
+import Button from '../ui/Button';
 import styles from './EventItem.module.css';
-import { DateIcon, AddressIcon, ArrowRightIcon } from '../icons';
+import { DateIcon, AddressIcon, ArrowRightIcon } from '../icons/index';
+import { TEventItem } from 'types/events';
 
-function EventItem({ title, image, date, location, id }) {
+function EventItem({ title, image, date, location, id }: TEventItem) {
   const formattedDate = new Date(date).toLocaleDateString('en-US', {
     day: 'numeric',
     month: 'long',
